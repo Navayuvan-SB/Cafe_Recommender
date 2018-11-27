@@ -1,8 +1,7 @@
-from tkinter import filedialog
-import tkinter
-from tkinter import *
-import tkinter.ttk as ttk
-import pandas as pd
+import tkFileDialog as filedialog
+import Tkinter
+from Tkinter import *
+import ttk
 import xlrd
 
 class Action():
@@ -54,7 +53,7 @@ class GUI(Action):
 		"""
 		Construction the GUI
 		"""
-		self.mw = tkinter.Tk()
+		self.mw = Tkinter.Tk()
 		self.mw.title("Cafe Recommender 1.0")
 		self.mw.geometry("1200x800")
 		self.mw.resizable(0,0)
@@ -179,8 +178,8 @@ class GUI(Action):
 		self.tree = ttk.Treeview(self.Tree_frame, columns=('Cafe'))
 		self.tree.heading('#0',text='Cafe')
 		self.tree.heading('#1',text='Rating')
-		self.tree.column('#0', stretch=tkinter.YES)
-		self.tree.column('#1', stretch=tkinter.YES)
+		self.tree.column('#0', stretch=Tkinter.YES)
+		self.tree.column('#1', stretch=Tkinter.YES)
 		self.tree.pack(side=TOP, expand=YES)
 
 		self.remove = Button(self.Remove_frame, text="REMOVE", bg="red", fg="white", width=8, height=2,command=self.removebtn)
